@@ -38,9 +38,10 @@ const router = createRouter({
       redirect: '/dashboard',
     },
     {
-      path: '/email/verify',
-      name: 'email.verify',
+      path: '/verify/email',
+      name: 'auth.verify.email',
       component: EmailVerify,
+       meta: { guarded: false },
     },
   ],
 })
