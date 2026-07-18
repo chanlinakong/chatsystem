@@ -81,6 +81,7 @@ const user = reactive({
   email: "",
   password: "",
   password_confirmation: "",
+  callback_url: "http://localhost:5173/email/verify",
 });
 
 const userError = reactive({
@@ -104,12 +105,12 @@ async function signUp() {
     resetAllState();
     return MessageModal({
       icon: "success",
-      title: "Success",
-      text: "Your account has been created successfully."
+      title: "Verify your email",
+      text: "Account created successfully. Please check your email and verify your account before logging in."
     },
-      () => {
-        router.replace({ name: "auth.signin" });
-      });
+    () => {
+      router.replace({ name: "auth.signin" });
+    });
   } catch (error) {
     const { response } = error;
     if (!response) {

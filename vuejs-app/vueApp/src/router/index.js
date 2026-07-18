@@ -2,6 +2,7 @@ import Signin from '@/components/auth/Signin.vue';
 import Signout from '@/components/auth/Signout.vue';
 import Signup from '@/components/auth/Signup.vue';
 import Dashboard from '@/components/auth/Dashboard.vue';
+import EmailVerify from '@/components/auth/EmailVerify.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -35,7 +36,12 @@ const router = createRouter({
     {
       path: '/:pathMatch(.*)*',
       redirect: '/dashboard',
-    }
+    },
+    {
+      path: '/email/verify',
+      name: 'email.verify',
+      component: EmailVerify,
+    },
   ],
 })
 
