@@ -9,6 +9,7 @@ services:
       - ./laravel-app/laravelApp:/var/www/html
       - laravel_data:/var/www/html/vendor
       - ./docker/laravel/entrypoint.development.sh:/usr/local/bin/entrypoint.development.sh
+      - ./docker/laravel/supervisord.development.conf:/etc/supervisor/conf.d/supervisord.development.conf
     ports:
       - "8000:8000"
     depends_on:
@@ -16,7 +17,7 @@ services:
         condition: service_healthy
     command: ["bash", "/usr/local/bin/entrypoint.development.sh"]
     healthcheck:
-      test: ["CMD", "curln", "-f", "http://localhost:8000/up"]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/up"]
       interval: 10s
       timeout: 5s
       retries: 5
