@@ -5,6 +5,7 @@ import Dashboard from '@/components/auth/Dashboard.vue';
 import EmailVerify from '@/components/auth/EmailVerify.vue';
 import ResetPassword from '@/components/auth/ResetPassword.vue';
 import SetNewPassword from '@/components/auth/SetNewPassword.vue';
+import GoogleOAuth from '@/components/google-oauth/GoogleOAuth.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -55,6 +56,12 @@ const router = createRouter({
       path: '/set-new-password',
       name: 'auth.set-new-password',
       component: SetNewPassword,
+      meta: { guarded: false },
+    },
+    {
+      path: '/google/oauth/callback',
+      name: 'auth.google.oauth.callback',
+      component: GoogleOAuth,
       meta: { guarded: false },
     },
   ],
