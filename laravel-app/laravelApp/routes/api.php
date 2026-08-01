@@ -28,7 +28,3 @@ Route::middleware('auth:sanctum')->group(function () {
 
     
 });
-
-Route::get('/success', function () {
-    return request()->query('token');
-});
