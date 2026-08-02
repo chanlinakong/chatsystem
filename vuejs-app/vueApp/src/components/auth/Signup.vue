@@ -54,8 +54,8 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-8"></div>
-              <div class="col-4">
+              <!-- <div class="col-8"></div> -->
+              <div class="col-12">
                 <button type="submit" class="btn btn-primary btn-block">Sign up</button>
               </div>
             </div>
