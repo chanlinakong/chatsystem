@@ -58,6 +58,7 @@
   </aside>
 </template>
 <script setup>
+import { onMounted } from 'vue'
 import emptyImage from '@/assets/images/emptyImage.png';
 import logoImage from '@/assets/images/logoImage.webp';
 import { useUserStore } from '@/stores/user';
