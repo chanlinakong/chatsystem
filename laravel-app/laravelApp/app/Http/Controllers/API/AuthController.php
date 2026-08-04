@@ -173,8 +173,9 @@ class AuthController extends Controller
         return response([
             'message' => 'Password has been reset successfully.'
         ], 200);
+    }
 
-        function createPassword(CreatePasswordRequest $request)
+    function createPassword(CreatePasswordRequest $request)
     {
         $user = $request->user();
         if (!empty($user->password)) {
@@ -253,6 +254,5 @@ class AuthController extends Controller
         return response([
             'message' => 'User profile image deleted successfully.',
         ], 200);
-    }
     }
 }
